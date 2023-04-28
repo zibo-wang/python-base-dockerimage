@@ -43,9 +43,9 @@ RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | 
 # Update environment variable
 ENV PATH="${PATH}:/opt/miniconda3/bin"
 
-RUN conda config --add channels conda-forge && \
-    conda config --add channels R && \
-    conda config --add channels bioconda && \
+RUN conda config --append channels conda-forge && \
+    conda config --append channels R && \
+    conda config --append channels bioconda && \
     conda config --set channel_priority true && \
     conda update -n base --all --yes && \
     conda install -n base conda-libmamba-solver && \
